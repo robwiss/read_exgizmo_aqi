@@ -6,7 +6,7 @@ I used the manual exposure mode of [ProCam 8](https://apps.apple.com/in/app/proc
 
 Video should be free of artifacts like scratches, reflections, etc. The software must have an unobstructed view of the blue bounding box in each frame. Here is a sample image I have captured:
 
-![A sample image of the exgizmo](assets/sample.jpg | width=600)
+![A sample image of the exgizmo](/assets/sample.jpg)
 
 ## Install
 ```
