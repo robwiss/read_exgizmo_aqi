@@ -6,7 +6,7 @@ I used the manual exposure mode of [ProCam 8](https://apps.apple.com/in/app/proc
 
 Video should be free of artifacts like scratches, reflections, etc. The software must have an unobstructed view of the blue bounding box in each frame. Here is a sample image I have captured:
 
-![A sample image of the exgizmo](assets/sample.jpg | width=600)
+![A sample image of the exgizmo](/assets/sample.jpg)
 
 ## Install
 ```
@@ -73,7 +73,7 @@ This will generate a csv file, `data/output.csv` containing the PM1.0, PM2.5, an
 
 The program will run much faster if CUDA is enabled. On a system with an Nvidia 3080 ti, 32 seconds of video processed in 44 seconds without `--details` and 1m25s with `--details`. On the same system with the GPU disabled, the video processed in 4m6s without `--details` and 8m53s with `--details`.
 
-# Details
+# Additional Information
 
 An issue that had to be solved was that an extracted frame may catch a value during the LCD's refresh cycle. These values are garbage. They present in one of two ways. One, part of a value has changed but part has not. OCR will usually read a number in this case but it will be trash. Two, a completely blank value. In this case OCR will read nothing.
 
