@@ -2,7 +2,7 @@
 
 ## Capture Video
 
-I used the manual exposure mode of [ProCam 8](https://apps.apple.com/in/app/procam-8/id730712409) on iPhone to capture 1080p 30fps video of the exgizmo. The exposure settings I used were a shutter speed of 1/810 of a second and ISO 400. These setting correctly expose the exgizmo's LCD for the image processing used by this software, I recommend using them to capture video. If video has been captured in an automatic mode, the `--enhance-contrast` option may allow the image to be processed correctly.
+I used the manual exposure mode of [ProCam 8](https://apps.apple.com/in/app/procam-8/id730712409) on iPhone to capture 1080p 30fps video of the exgizmo. The exposure settings I used were a shutter speed of 1/400 of a second and ISO 400. These setting correctly expose the exgizmo's LCD for the image processing used by this software, I recommend using them to capture video. If video has been captured in an automatic mode, the `--enhance-contrast` option may allow the image to be processed correctly.
 
 Video should be free of artifacts like scratches, reflections, etc. The software must have an unobstructed view of the blue bounding box in each frame. Here is a sample image I have captured:
 
@@ -25,6 +25,11 @@ Place your data file in a directory, such as `/data` so the extracted images sta
 ```
 cd data/
 ffmpeg -i <video file> -vf fps=15 -qscale:v 2 video-%06d.jpg
+```
+
+If captured data is 480, use this version of the ffmpeg command to scale the image to the expected size
+```
+ffmpeg -i <video file> -vf fps=15,scale=1920:1080 -qscale:v 2 video-%06d.jpg
 ```
 
 If there are frames that aren't of the exgizmo at the beginning or end, delete those jpegs.
